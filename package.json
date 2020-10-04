@@ -1,0 +1,36 @@
+{
+  "name": "html-chohyo",
+  "version": "0.1.0",
+  "description": "Cross platform HTML/CSS based reporting tool aka HTML 帳票",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caramelopardalis/html-chohyo.git"
+  },
+  "keywords": [
+    "report",
+    "reporting",
+    "html-report",
+    "reporting-tool",
+    "pdf"
+  ],
+  "author": "caramelopardalis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caramelopardalis/html-chohyo/issues"
+  },
+  "homepage": "https://github.com/caramelopardalis/html-chohyo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "jspdf": "^2.1.1"
+  }
+}
