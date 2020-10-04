@@ -1,7 +1,7 @@
 module.exports = {
     mode: 'development',
     entry: {
-        'html-chohyo': './src/html-chohyo.js'
+        'html-chohyo': './src/js/html-chohyo.js'
     },
     module: {
         rules: [
@@ -14,6 +14,18 @@ module.exports = {
                             presets: [
                                 '@babel/preset-env'
                             ]
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            url: false
                         }
                     }
                 ]

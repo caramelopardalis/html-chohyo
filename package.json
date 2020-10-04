@@ -2,7 +2,6 @@
   "name": "html-chohyo",
   "version": "0.1.0",
   "description": "Cross platform HTML/CSS based reporting tool aka HTML 帳票",
-  "main": "index.js",
   "scripts": {
     "build": "webpack"
   },
@@ -27,6 +26,8 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "style-loader": "^1.3.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
