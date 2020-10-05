@@ -1,7 +1,11 @@
 module.exports = {
     mode: 'development',
     entry: {
-        'html-chohyo': './src/js/html-chohyo.js'
+        'dist/html-chohyo': './src/js/html-chohyo.js',
+        'demo/dist/js/demo': './demo/src/js/demo.js'
+    },
+    output: {
+        path: __dirname,
     },
     module: {
         rules: [
