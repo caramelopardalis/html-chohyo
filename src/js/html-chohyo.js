@@ -1,6 +1,4 @@
-import '../css/html-chohyo.css';
-
-var htmlChohyo = {};
+export const htmlChohyo = {};
 
 const WALKER_ASYNC_PROCESS_COUNT = 100
 const SHRINK_ASYNC_PROCESS_COUNT = 100
@@ -597,5 +595,3 @@ loadScripts([
     })
     waiter.ok()
 })
-
-module.exports = htmlChohyo;
