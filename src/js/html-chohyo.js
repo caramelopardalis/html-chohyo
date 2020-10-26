@@ -622,29 +622,29 @@ const pdf = async (config) => {
         hotfixes: [
             'px_scaling'
         ],
-        format: [794, 1123]
-    });
-
-    config.fonts.forEach(font => {
-        doc.addFileToVFS(font.fileName, font.data);
-        doc.addFont(font.fileName, font.fontName, font.weight);
+        format: [794, 1123],
     })
 
-    const container = document.querySelector('.chohyo-pages-container');
-    container.style.display = 'inline-flex';
-    container.style.flexDirection = 'column';
+    config.fonts.forEach(font => {
+        doc.addFileToVFS(font.fileName, font.data)
+        doc.addFont(font.fileName, font.fontName, font.weight)
+    })
+
+    const container = document.querySelector('.chohyo-pages-container')
+    container.style.display = 'inline-flex'
+    container.style.flexDirection = 'column'
     container.querySelectorAll('.chohyo-page').forEach((page) => {
-        page.style.margin = '0';
-        page.style.boxShadow = 'none';
-    });
+        page.style.margin = '0'
+        page.style.boxShadow = 'none'
+    })
 
     doc.html(container, {
         callback: function (doc) {
             // なぜか最後に白紙の余分なページが出力されてしまうので削除する
-            doc.deletePage(doc.getNumberOfPages());
-            doc.save();
+            doc.deletePage(doc.getNumberOfPages())
+            doc.save()
         }
-    });
+    })
 }
 
 export function htmlChohyo() {
