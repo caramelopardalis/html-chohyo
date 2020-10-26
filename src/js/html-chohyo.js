@@ -1,4 +1,4 @@
-const htmlChohyo = function () {
+export function htmlChohyo() {
     this.preview = async () => {
         await pagerize()
     }
@@ -595,9 +595,3 @@ loadScripts([
     })
     waiter.ok()
 })
-
-const func = function() {
-    console.log('hi')
-}
-
-export { htmlChohyo, func }
