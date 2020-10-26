@@ -1,0 +1,84 @@
+h1 {
+    padding-top: 10mm;
+    padding-bottom: 10mm;
+    text-align: center;
+}
+.page-numbers {
+    text-align: right;
+}
+
+header {
+    padding: 1rem;
+}
+h2 {
+    font-size: 1rem;
+}
+.header-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chohyo-grid-header.field-quantity
+,.chohyo-grid-header.field-name
+,.chohyo-grid-header.field-price {
+    font-weight: bold;
+    text-align: center;
+}
+.chohyo-grid-data.field-quantity
+,.chohyo-grid-data.field-name
+,.chohyo-grid-data.field-price {
+    border-bottom: none !important;
+    padding: 1rem;
+    white-space: pre-wrap;
+}
+.chohyo-grid-data.field-quantity {
+    text-align: center;
+}
+.chohyo-grid-data.field-price {
+    text-align: right;
+}
+
+:root {
+    --field-quantity-width: 20mm;
+    --field-price-width: 30mm;
+}
+.chohyo-grid-header.field-quantity {
+    min-width: var(--field-quantity-width);
+    max-width: var(--field-quantity-width);
+}
+.chohyo-grid-data.field-quantity {
+    min-width: calc(var(--field-quantity-width) - (1rem * 2));
+    max-width: calc(var(--field-quantity-width) - (1rem * 2));
+}
+.field-name {
+    flex-grow: 1;
+}
+.chohyo-grid-header.field-price {
+    min-width: var(--field-price-width);
+    max-width: var(--field-price-width);
+}
+.chohyo-grid-data.field-price {
+    min-width: calc(var(--field-price-width) - (1rem * 2));
+    max-width: calc(var(--field-price-width) - (1rem * 2));
+}
+
+footer {
+    display: flex;
+    flex-flow: column nowrap;
+    border-top: 1px solid #000;
+    padding: 1rem;
+}
+.subtotal
+,.delivery-charges
+,.total {
+    text-align: right;
+}
+
+.github-fork-ribbon:before {
+    background-color: #cce5df;
+}
+@media print {
+    .github-fork-ribbon {
+        display: none;
+    }
+}
