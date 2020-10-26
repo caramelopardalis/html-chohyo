@@ -1,8 +1,4 @@
-export function htmlChohyo() {
-    this.preview = async () => {
-        await pagerize()
-    }
-}
+import { jsPDF } from 'jspdf'
 
 const WALKER_ASYNC_PROCESS_COUNT = 100
 const SHRINK_ASYNC_PROCESS_COUNT = 100
@@ -595,3 +591,66 @@ loadScripts([
     })
     waiter.ok()
 })
+
+const fetchFont = async (uri) => {
+    return new Promise(function (resolve, reject) {
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', uri, true)
+        xhr.responseType = 'arraybuffer'
+        xhr.onload = () => {
+            const bytes = new Uint8Array(xhr.response);
+            const chars = [];
+            for (let i = 0; i < bytes.byteLength; i++) {
+                chars.push(String.fromCharCode(bytes[i]))
+            }
+            resolve(window.btoa(chars.join('')))
+        }
+        xhr.onerror = () => {
+            reject()
+        }
+        xhr.send()
+    })
+}
+
+const pdf = async (config) => {
+    config = config ?? {
+        fonts: []
+    }
+
+    const doc = new jsPDF({
+        unit: 'px',
+        hotfixes: [
+            'px_scaling'
+        ],
+        format: [794, 1123]
+    });
+
+    config.fonts.forEach(font => {
+        doc.addFileToVFS(font.fileName, font.data);
+        doc.addFont(font.fileName, font.fontName, font.weight);
+    })
+
+    const container = document.querySelector('.chohyo-pages-container');
+    container.style.display = 'inline-flex';
+    container.style.flexDirection = 'column';
+    container.querySelectorAll('.chohyo-page').forEach((page) => {
+        page.style.margin = '0';
+        page.style.boxShadow = 'none';
+    });
+
+    doc.html(container, {
+        callback: function (doc) {
+            // なぜか最後に白紙の余分なページが出力されてしまうので削除する
+            doc.deletePage(doc.getNumberOfPages());
+            doc.save();
+        }
+    });
+}
+
+export function htmlChohyo() {
+    this.preview = async () => {
+        await pagerize()
+    }
+    this.fetchFont = fetchFont
+    this.pdf = pdf
+}

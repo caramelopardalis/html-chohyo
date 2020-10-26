@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "ipag";
+    src: url("../fonts/ipag.ttf");
+}
+html {
+    font-family: "ipag";
+}
+
 h1 {
     padding-top: 10mm;
     padding-bottom: 10mm;
@@ -72,13 +80,4 @@ footer {
 ,.delivery-charges
 ,.total {
     text-align: right;
-}
-
-.github-fork-ribbon:before {
-    background-color: #cce5df;
-}
-@media print {
-    .github-fork-ribbon {
-        display: none;
-    }
 }
