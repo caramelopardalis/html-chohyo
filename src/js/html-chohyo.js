@@ -1,4 +1,8 @@
-export const htmlChohyo = {};
+const htmlChohyo = function () {
+    this.preview = async () => {
+        await pagerize()
+    }
+}
 
 const WALKER_ASYNC_PROCESS_COUNT = 100
 const SHRINK_ASYNC_PROCESS_COUNT = 100
@@ -7,10 +11,6 @@ let pageMarginTop
 let pageHeader
 let pageFooter
 let pageMarginBottom
-
-htmlChohyo.preview = async () => {
-    await pagerize()
-}
 
 const pagerize = async () => {
     const contentContainer = document.getElementsByClassName('chohyo-content')[0]
@@ -595,3 +595,9 @@ loadScripts([
     })
     waiter.ok()
 })
+
+const func = function() {
+    console.log('hi')
+}
+
+export { htmlChohyo, func }

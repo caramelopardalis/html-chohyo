@@ -1,3 +1,5 @@
-import * as htmlChohyo from '../../dist/html-chohyo.js';
+import { htmlChohyo, func } from '../../src/js/html-chohyo.js'
 
-htmlChohyo.preview();
+func();
+
+new htmlChohyo().preview()
