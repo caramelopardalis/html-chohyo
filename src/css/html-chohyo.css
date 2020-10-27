@@ -50,23 +50,23 @@
     word-break: break-all;
 }
 
-.chohyo-bordered.chohyo-grid:first-child .chohyo-grid-header:not(:first-child)
-,.chohyo-bordered.chohyo-grid:first-child .chohyo-grid-data:not(:first-child) {
+.chohyo-grid-bordered.chohyo-grid:first-child .chohyo-grid-header:not(:first-child)
+,.chohyo-grid-bordered.chohyo-grid:first-child .chohyo-grid-data:not(:first-child) {
     border: 1px solid black;
     border-left: none;
 }
-.chohyo-bordered.chohyo-grid:first-child .chohyo-grid-header:first-child
-,.chohyo-bordered.chohyo-grid:first-child .chohyo-grid-data:first-child {
+.chohyo-grid-bordered.chohyo-grid:first-child .chohyo-grid-header:first-child
+,.chohyo-grid-bordered.chohyo-grid:first-child .chohyo-grid-data:first-child {
     border: 1px solid black;
 }
-.chohyo-bordered.chohyo-grid:not(:first-child) .chohyo-grid-header:not(:first-child)
-,.chohyo-bordered.chohyo-grid:not(:first-child) .chohyo-grid-data:not(:first-child) {
+.chohyo-grid-bordered.chohyo-grid:not(:first-child) .chohyo-grid-header:not(:first-child)
+,.chohyo-grid-bordered.chohyo-grid:not(:first-child) .chohyo-grid-data:not(:first-child) {
     border: 1px solid black;
     border-top: none;
     border-left: none;
 }
-.chohyo-bordered.chohyo-grid:not(:first-child) .chohyo-grid-header:first-child
-,.chohyo-bordered.chohyo-grid:not(:first-child) .chohyo-grid-data:first-child {
+.chohyo-grid-bordered.chohyo-grid:not(:first-child) .chohyo-grid-header:first-child
+,.chohyo-grid-bordered.chohyo-grid:not(:first-child) .chohyo-grid-data:first-child {
     border: 1px solid black;
     border-top: none;
 }

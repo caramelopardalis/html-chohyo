@@ -24,11 +24,30 @@
                 </div>
             </header>
             <div class="chohyo-group group-orders">
-                <div class="chohyo-grid chohyo-bordered">
+                <div class="chohyo-grid chohyo-grid-bordered">
                     <div class="chohyo-grid-header field-quantity">数量</div>
                     <div class="chohyo-grid-header field-name">商品名</div>
                     <div class="chohyo-grid-header field-price">価格</div>
                 </div>
+                <!--
+                    このファイルの末尾のスクリプトによって、次のような HTML がここに挿入されます。
+                    .chohyo-group で囲まれた要素は、改ページが発生した時に次のページにもまとめて複製されます。
+                    .chohyo-grid, .chohyo-grid-header, .chohyo-grid-data, .chohyo-grid-bordered はテーブル形式のスタイルを
+                    実現するためのコンビニエンスクラスです。
+                    <div class="chohyo-group chohyo-grid chohyo-grid-bordered">
+                        loop {
+                            <div class="chohyo-grid-data field-quantity">
+                                text...
+                            </div>
+                            <div class="chohyo-grid-data field-name">
+                                text...
+                            </div>
+                            <div class="chohyo-grid-data field-price">
+                                text...
+                            </div>
+                        }
+                    </div>
+                -->
             </div>
             <footer>
                 <div class="subtotal">小計 ￥${subtotal}</div>
@@ -54,7 +73,7 @@
                     const product = document.createElement('div')
                     product.classList.add('chohyo-group')
                     product.classList.add('chohyo-grid')
-                    product.classList.add('chohyo-bordered')
+                    product.classList.add('chohyo-grid-bordered')
                     orders.appendChild(product)
 
                     const quantity = document.createElement('div')
