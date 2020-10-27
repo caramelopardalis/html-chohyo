@@ -40,7 +40,7 @@ const pagerize = async () => {
             return
         }
 
-        const originalNearestGroup = currentElement.closest('.chohyo-group')
+        const originalNearestGroup = currentElement.closest('.chohyo-page-break-group')
         // TODO check originalNearestGroup null
         const clonedOriginalNearestGroup = originalNearestGroup.cloneNode(true)
 
@@ -124,7 +124,7 @@ const pagerize = async () => {
     }
 
     const shrinkSync = (currentElement) => {
-        const originalNearestGroup = currentElement.closest('.chohyo-group')
+        const originalNearestGroup = currentElement.closest('.chohyo-page-break-group')
         const nearestGroup = page.container.querySelector(':scope [data-chohyo-id="' + originalNearestGroup.getAttribute('data-chohyo-id') + '"]')
         const dataInNearestGroup = nearestGroup.querySelectorAll(':scope .chohyo-grid-data')
 
@@ -244,7 +244,7 @@ const pagerize = async () => {
     }
 
     const hasData = (currentElement) => {
-        const originalNearestGroup = currentElement.closest('.chohyo-group')
+        const originalNearestGroup = currentElement.closest('.chohyo-page-break-group')
         const nearestGroup = page.container.querySelector(':scope [data-chohyo-id="' + originalNearestGroup.getAttribute('data-chohyo-id') + '"]')
         const dataInNearestGroup = nearestGroup.querySelectorAll(':scope .chohyo-grid-data-inner')
 
@@ -258,7 +258,7 @@ const pagerize = async () => {
     }
 
     const moveToNextPage = (element) => {
-        let ancestorGroup = element.closest('.chohyo-group')
+        let ancestorGroup = element.closest('.chohyo-page-break-group')
 
         if (!ancestorGroup) {
             page = new Page()
@@ -272,14 +272,14 @@ const pagerize = async () => {
         while (ancestorGroup) {
             ancestorGroups.push(ancestorGroup)
             ancestorGroupsIds.push(ancestorGroup.getAttribute('data-chohyo-id'))
-            ancestorGroup = ancestorGroup.parentElement.closest('.chohyo-group')
+            ancestorGroup = ancestorGroup.parentElement.closest('.chohyo-page-break-group')
         }
 
         const clonedFarthestGroup = ancestorGroups[ancestorGroups.length - 1].cloneNode(true)
-        const closestGroup = element.closest('.chohyo-group')
+        const closestGroup = element.closest('.chohyo-page-break-group')
         closestGroup.parentElement.removeChild(closestGroup)
 
-        const groupedGroups = clonedFarthestGroup.querySelectorAll(':scope .chohyo-group')
+        const groupedGroups = clonedFarthestGroup.querySelectorAll(':scope .chohyo-page-break-group')
         for (const groupedGroup of groupedGroups) {
             if (!ancestorGroupsIds.includes(groupedGroup.getAttribute('data-chohyo-id'))) {
                 groupedGroup.parentElement.removeChild(groupedGroup)
@@ -294,16 +294,16 @@ const pagerize = async () => {
     const copyGroupToNextPage = (currentElement) => {
         const ancestorGroups = []
         const ancestorGroupsIds = []
-        let ancestorGroup = currentElement.closest('.chohyo-group')
+        let ancestorGroup = currentElement.closest('.chohyo-page-break-group')
         while (ancestorGroup) {
             ancestorGroups.push(ancestorGroup)
             ancestorGroupsIds.push(ancestorGroup.getAttribute('data-chohyo-id'))
-            ancestorGroup = ancestorGroup.parentElement.closest('.chohyo-group')
+            ancestorGroup = ancestorGroup.parentElement.closest('.chohyo-page-break-group')
         }
 
         const clonedFarthestGroup = ancestorGroups[ancestorGroups.length - 1].cloneNode(true)
 
-        const groupedGroups = clonedFarthestGroup.querySelectorAll(':scope .chohyo-group')
+        const groupedGroups = clonedFarthestGroup.querySelectorAll(':scope .chohyo-page-break-group')
         for (const groupedGroup of groupedGroups) {
             if (!ancestorGroupsIds.includes(groupedGroup.getAttribute('data-chohyo-id'))) {
                 groupedGroup.parentElement.removeChild(groupedGroup)

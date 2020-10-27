@@ -23,7 +23,7 @@
                     <div class="field-receipt-number">納品書番号 Ji9Bn20Dkjso84</div>
                 </div>
             </header>
-            <div class="chohyo-group group-orders">
+            <div class="chohyo-page-break-group group-orders">
                 <div class="chohyo-grid chohyo-grid-bordered">
                     <div class="chohyo-grid-header field-quantity">数量</div>
                     <div class="chohyo-grid-header field-name">商品名</div>
@@ -31,10 +31,10 @@
                 </div>
                 <!--
                     このファイルの末尾のスクリプトによって、次のような HTML がここに挿入されます。
-                    .chohyo-group で囲まれた要素は、改ページが発生した時に次のページにもまとめて複製されます。
+                    .chohyo-page-break-group で囲まれた要素は、改ページが発生した時に次のページにもまとめて複製されます。
                     .chohyo-grid, .chohyo-grid-header, .chohyo-grid-data, .chohyo-grid-bordered はテーブル形式のスタイルを
                     実現するためのコンビニエンスクラスです。
-                    <div class="chohyo-group chohyo-grid chohyo-grid-bordered">
+                    <div class="chohyo-page-break-group chohyo-grid chohyo-grid-bordered">
                         loop {
                             <div class="chohyo-grid-data field-quantity">
                                 text...
@@ -71,7 +71,7 @@
 
                 for (let i = 0; i < numberOfOrders; i++) {
                     const product = document.createElement('div')
-                    product.classList.add('chohyo-group')
+                    product.classList.add('chohyo-page-break-group')
                     product.classList.add('chohyo-grid')
                     product.classList.add('chohyo-grid-bordered')
                     orders.appendChild(product)
