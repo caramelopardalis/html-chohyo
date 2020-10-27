@@ -8,5 +8,12 @@
         "package.json",
         "README.md",
         "snowpack.config.json"
-    ]
+    ],
+    "installOptions": {
+        "sourceMap": true,
+        "treeshake": true
+    },
+    "buildOptions": {
+        "sourceMaps": true
+    }
 }
