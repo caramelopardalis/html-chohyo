@@ -617,12 +617,16 @@ const pdf = async (config) => {
         fonts: []
     }
 
+    const root = getComputedStyle(document.documentElement)
+    const pageShortLength = parseInt(root.getPropertyValue('--page-short-length'))
+    const pageLongLength = parseInt(root.getPropertyValue('--page-long-length'))
+
     const doc = new jsPDF({
         unit: 'px',
         hotfixes: [
             'px_scaling'
         ],
-        format: [794, 1123],
+        format: [pageShortLength, pageLongLength],
     })
 
     config.fonts.forEach(font => {

@@ -1,14 +1,16 @@
 :root {
     /* A4: ceil((595.28 pt | 841.89 pt) * (96 dpi / 72 dpi)) = n px */
     /* 単位換算など小数の計算でずれるため、CSS と JS の両方で同じ整数の px を指定する */
-    --a4-x: 794px;
-    --a4-y: 1123px;
+    --a4-short-length: 794px;
+    --a4-long-length: 1123px;
+    --page-short-length: var(--a4-short-length);
+    --page-long-length: var(--a4-long-length);
     --print-default-white-space: 0.4in;
 }
 
 .chohyo-a4-portrait .chohyo-page {
-    width: var(--a4-x);
-    height: var(--a4-y);
+    width: var(--page-short-length);
+    height: var(--page-long-length);
 }
 
 .chohyo-page {

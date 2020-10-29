@@ -4,6 +4,7 @@ const chohyo = new htmlChohyo();
 
 chohyo.preview()
 
+/*
 setTimeout(async () => {
     const ipag = await chohyo.fetchFont('fonts/ipag.ttf')
     chohyo.pdf({
@@ -17,3 +18,4 @@ setTimeout(async () => {
         ]
     })
 }, 10000)
+*/
